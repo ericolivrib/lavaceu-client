@@ -11,6 +11,7 @@
     </p>
   </div>
 
+  <!-- TODO: Criar 'select' com busca de moradores a partir do número de matrícula -->
   <div formGroupName="morador">
     <!-- Nome do morador da CEU -->
     <label for="nome">Estudante </label>
@@ -24,15 +25,20 @@
     <label for="telefone">Telefone </label>
     <input type="text" id="telefone" formControlName="telefone" placeholder="(XX) XXXXX-XXXX" />
   
+    <!-- Número do apartamento -->
     <label for="apartamento">Apartamento </label>
     <input type="text" id="apartamento" formControlName="apartamento" />
   </div>
   
-  <label for="data">Data </label>
-  <input type="date" id="data" formControlName="data" />
-
-  <label for="horario">Horário </label>
-  <input type="time" id="horario" formControlName="horario" />
+  <div>
+    <!-- Dia do agendamento -->
+    <label for="data">Data </label>
+    <input type="date" id="data" formControlName="data" />
+  
+    <!-- Hora do agendamento -->
+    <label for="horario">Horário </label>
+    <input type="time" id="horario" formControlName="horario" />
+  </div>
 
   <div>
     <button type="submit" [disabled]="!form.valid">Inserir</button>
