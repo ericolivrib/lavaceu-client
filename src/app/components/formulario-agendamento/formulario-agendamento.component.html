@@ -1,5 +1,15 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <h2>Inserir novo agendamento</h2>
+  <h2>Formulário de agendamento</h2>
+
+  <div>
+    <p>
+      Para realizar um agendamento, insira os dados do estudante junto com a data e hora do agendamento.
+    </p>
+  
+    <p>
+      <strong>IMPORTANTE:</strong> Só serão permitidos agendamentos para estudantes residentes do campus sede.
+    </p>
+  </div>
 
   <div formGroupName="morador">
     <!-- Nome do morador da CEU -->
@@ -24,5 +34,7 @@
   <label for="horario">Horário </label>
   <input type="time" id="horario" formControlName="horario" />
 
-  <button type="submit" [disabled]="!form.valid">Inserir</button>
+  <div>
+    <button type="submit" [disabled]="!form.valid">Inserir</button>
+  </div>
 </form>
