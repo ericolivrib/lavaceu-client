@@ -1,0 +1,28 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h2>Inserir novo agendamento</h2>
+
+  <div formGroupName="morador">
+    <!-- Nome do morador da CEU -->
+    <label for="nome">Estudante </label>
+    <input type="text" id="nome" formControlName="nome" placeholder="Nome do morador da CEU" />
+
+    <!-- Número de matrícula do morador -->
+    <label for="matricula">Matrícula </label>
+    <input type="text" id="matricula" formControlName="matricula" />
+  
+    <!-- Número de telefone -->
+    <label for="telefone">Telefone </label>
+    <input type="text" id="telefone" formControlName="telefone" placeholder="(XX) XXXXX-XXXX" />
+  
+    <label for="apartamento">Apartamento </label>
+    <input type="text" id="apartamento" formControlName="apartamento" />
+  </div>
+  
+  <label for="data">Data </label>
+  <input type="date" id="data" formControlName="data" />
+
+  <label for="horario">Horário </label>
+  <input type="time" id="horario" formControlName="horario" />
+
+  <button type="submit" [disabled]="!form.valid">Inserir</button>
+</form>
