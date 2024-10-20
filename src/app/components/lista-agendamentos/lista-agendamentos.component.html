@@ -1,1 +1,35 @@
-<p>lista-agendamentos works!</p>
+<h2>Lista de agendamentos</h2>
+
+<p *ngIf="agendamentos.length == 0">Sem agendamentos</p>
+
+<div *ngIf="agendamentos.length > 0">
+  <table>
+    <thead>
+      <tr>
+        <th>Nº</th>
+        <th>Matrícula</th>
+        <th>Morador</th>
+        <th>Data</th>
+        <th>Hora</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of agendamentos; index as i">
+        <td>{{ i + 1 }}</td>
+        <td>{{ a.morador.matricula }}</td>
+        <td>{{ a.morador.nome }}</td>
+        <td>{{ a.data }}</td>
+        <td>{{ a.hora }}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>Nº</th>
+        <th>Matrícula</th>
+        <th>Morador</th>
+        <th>Data</th>
+        <th>Hora</th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
